@@ -7,6 +7,10 @@ class UsersController < ApplicationController
       
     end
 
+    def index
+      @user = User.all
+    end
+
     def create
       @user = User.new(users_params)
       if @user.save
