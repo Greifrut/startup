@@ -1,19 +1,37 @@
-<%= form_for @user do |f| %>
+<div class="container lg w-4/5 p-center">
+  <div class="flex flex-row justify-center w-full">
+    <%= form_for @user, :html => {class: "bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"} do |f| %>
+      <div class="mb-4">
+        <%= f.label :first_name, class: "block text-gray text-sm font-bold mb-2" %>
+        <%= f.text_field :first_name, class: "shadow apperance-none border rounded w-64 py-2 px-3 text-gray" %>
+      </div> 
+      
+      <div class="mb-4">
+            <%= f.label :last_name, class: "block text-gray text-sm font-bold mb-2"%>
+            <%= f.text_field :last_name, class: "shadow apperance-none border rounded w-64 py-2 px-3 text-gray" %>
+      </div>
+      <div class="mb-4">
+            <%= f.label :email, class: "block text-gray text-sm font-bold mb-2" %>
+            <%= f.email_field :email, class: "shadow apperance-none border rounded w-64 py-2 px-3 text-gray" %>
+      </div>
+      <div class="mb-4">
+            <%= f.label :password, class: "block text-gray text-sm font-bold mb-2" %>
+            <%= f.password_field :password, class: "shadow apperance-none border rounded w-64 py-2 px-3 text-gray" %>
+      </div>
+      <div class="mb-4">
+            <%= f.label :password_confirmation, class: "block text-gray text-sm font-bold mb-2" %>
+            <%= f.password_field :password_confirmation, class: "shadow apperance-none border rounded w-64 py-2 px-3 text-gray" %>
+      </div>
+      
+    
 
-    <%= f.label :first_name %>
-    <%= f.text_field :first_name %>
+    
+      
+    
+      
+    
+      <%= f.submit 'Sign Up', class: 'bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 rounded' %>
 
-    <%= f.label :last_name %>
-    <%= f.text_field :last_name %>
-
-    <%= f.label :email %>
-    <%= f.email_field :email %>
-
-    <%= f.label :password %>
-    <%= f.password_field :password %>
-
-    <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation %>
-
-    <%= f.submit 'Sign Up' %>
-<% end %>
+    <% end %>
+  </div>   
+</div>
