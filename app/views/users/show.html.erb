@@ -1,4 +1,10 @@
-<%= current_user.first_name %>
-<%= current_user.last_name %>
-
-<%= link_to  "Users", users_path %>
+<div class="container">
+  <div class="flex flex-col w-64 h-screen bg-blue-light opacity-25  z-0  ">
+      <div class="flex-col z-1">
+          <img class="w-32 rounded-lg"src="../assets/avatar.jpg" alt="alt">
+          <h2><%= current_user.first_name %> <%= current_user.last_name %></h2>
+          <p><%= current_user.email %></p>
+      </div>
+   
+  </div>
+</div>

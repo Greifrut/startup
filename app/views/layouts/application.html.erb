@@ -11,6 +11,10 @@
   </head>
 
   <body>
-    <%= render 'layouts/header' %>
+    <% if current_user %>
+      <%= render 'layouts/header_users' %>
+    <% else %>
+      <%= render 'layouts/header' %>
+    <% end %>
   </body>
 </html>
