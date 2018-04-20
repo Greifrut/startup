@@ -1,1 +1,1 @@
-import 'application.css';
+@import 'bootstrap/dist/js/bootstrap';
