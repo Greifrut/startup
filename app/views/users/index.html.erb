@@ -1,5 +1,6 @@
-<% @user.each do |user| %>
-    <%= user.first_name %> <%= user.last_name %>
+<section class="resume-section p-3 p-lg-5 d-flex d-column">
+    <% @user.each do |user| %>
+    <h5><%= user.first_name %> <%= user.last_name %></h5>
     <br />
     <% unless current_user == user %>
         <% if current_user.friends(user) %>
@@ -21,3 +22,4 @@
     </li>
   <% end %>
 </ul>
+</section>
