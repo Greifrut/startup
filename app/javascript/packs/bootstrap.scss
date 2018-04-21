@@ -1,4 +1,8 @@
 @import '~bootstrap/dist/css/bootstrap';
-@import '../scss/variables';
-@import '../scss/mixins';
-@import '../scss/navbar';
+@import '../scss/static_page/variables';
+@import '../scss/static_page/global';
+@import '../scss/static_page/mixins';
+@import '../scss/static_page/bootstrap_overrides';
+@import '../scss/static_page/navbar';
+@import '../scss/static_page/masthead';
+@import '../scss/new_user/form';
