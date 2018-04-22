@@ -1,17 +1,61 @@
-<section class="resume-section p-3 p-lg-5 d-flex d-column">
-    <% @user.each do |user| %>
-    <h5><%= user.first_name %> <%= user.last_name %></h5>
-    <br />
-    <% unless current_user == user %>
-        <% if current_user.friends(user) %>
-            <%= link_to  "Unfriend", friendship_path(user), method: :delete %>
-        <% elsif current_user.pending(user) %>
-            <%= link_to "Cancel", friendship_path(user), method: :delete %>
-        <% else %>
-            <%= link_to  "Add friend", friendships_path(friend_id: user), method: :post %>
-        <% end %>
-    <% end %>
-<% end %>
+<div class="container page-content">
+    <div class="directory-info-row">
+      <div class="row">
+        <% @user.each do |user| %>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="panel">
+                <div class="panel-body">
+                    <div class="media">
+                        <%= link_to user, class: "pull-left" do %>
+                            <img src="../assets/avatar.jpg" class="thumb media-object" alt="">
+                        <% end %>
+                        <div class="media-body">
+                          <h4><%= user.first_name %> <%= user.last_name %></h4>
+                          <ul class="social-links">
+                              <li><%= link_to '#', :title => "Facebook" do %>
+                                <i class="fab fa-facebook-f "></i>
+                                <% end %>
+                              </li>
+                              <li><%= link_to '#', :title => "Twitter" do %>
+                                <i class="fab fa-twitter"></i>
+                               <% end %></li>
+                              <li><%= link_to '#', :title => "Instagram" do %>
+                                <i class="fab fa-instagram"></i>
+                                <% end %></li>
+                              <li><%= link_to '#', :title => "Vkontakte" do %>
+                                <i class="fab fa-vk"></i>
+                                <% end %></li>  
+                          </ul>
+                          <address>
+                            <strong>Email:</strong><%= user.email %>
+                          </address>
+                          <% unless current_user == user %>
+                            <% if current_user.friends(user) %>
+                                <%= link_to  "Unfriend", friendship_path(user), method: :delete %>
+                            <% elsif current_user.pending(user) %>
+                                <%= link_to "Cancel", friendship_path(user), method: :delete %>
+                            <% else %>
+                                <%= link_to  "Add friend", friendships_path(friend_id: user), method: :post %>
+                            <% end %>
+                          <% end %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <% end %>   
+     </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
 
 <ul>
     <% current_user.requested_friendships.each do |request| %>
@@ -22,4 +66,3 @@
     </li>
   <% end %>
 </ul>
-</section>
