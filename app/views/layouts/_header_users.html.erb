@@ -9,7 +9,7 @@
                     <div class="user-info">
                       <span><%= current_user.first_name %> <%= current_user.last_name %></span>
                       <h6 class="email"><%= current_user.email %></h6>
-                        <%= link_to 'New post', '#', class: "btn btn-primary btn-lg" %>
+                        <%= link_to 'New post', new_post_path, class: "btn btn-primary btn-lg" %>
                     </div>
                 </span>
             </div>
@@ -25,7 +25,7 @@
                         <%= link_to "Friend", friendship_path(current_user), class: "nav-link" %>
                     </li>
                     <li class="nav-item">
-                        <%= link_to "Edit profile", edit_user_path, class: "nav-link" %>
+                        <%= link_to "Edit profile", '#', class: "nav-link" %>
                     </li>
                     <li class="nav-item">
                         <%= link_to "Notification", '#', class: "nav-link" %>
