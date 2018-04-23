@@ -1,0 +1,8 @@
+<span class="d-block d-lg-none"><%= current_user.first_name %> <%= current_user.last_name %></span>
+<span class="d-none d-lg-block">
+<%= link_to current_user do %>
+  <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="../assets/avatar.jpg" alt="">
+<% end %>
+<div class="user-info">
+  <span><%= current_user.first_name %> <%= current_user.last_name %></span>
+  <h6 class="email"><%= current_user.email %></h6>

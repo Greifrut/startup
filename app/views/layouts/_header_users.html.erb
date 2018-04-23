@@ -3,13 +3,14 @@
 
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
             <div class="navbar-brand">
-                <span class="d-block d-lg-none"><%= current_user.first_name %> <%= current_user.last_name %></span>
-                <span class="d-none d-lg-block">
-                    <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="../assets/avatar.jpg" alt="">
-                    <div class="user-info">
-                      <span><%= current_user.first_name %> <%= current_user.last_name %></span>
-                      <h6 class="email"><%= current_user.email %></h6>
-                        <%= link_to 'New post', new_post_path, class: "btn btn-primary btn-lg" %>
+            <% if action_name == "show" %>
+                <%= render 'shared/show_user' %>
+            <% else %>
+                <%= render 'shared/unless_show' %>
+            <% end %>
+                        <% if @user == current_user %>
+                            <%= link_to 'New post', new_post_path, class: "btn btn-primary btn-lg" %>
+                        <% end %>
                     </div>
                 </span>
             </div>
@@ -25,7 +26,7 @@
                         <%= link_to "Friend", friendship_path(current_user), class: "nav-link" %>
                     </li>
                     <li class="nav-item">
-                        <%= link_to "Edit profile", '#', class: "nav-link" %>
+                        <%= link_to "Edit profile", edit_user_path(current_user), class: "nav-link" %>
                     </li>
                     <li class="nav-item">
                         <%= link_to "Notification", '#', class: "nav-link" %>
