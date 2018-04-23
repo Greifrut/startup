@@ -2,12 +2,16 @@
     <div id="page-top">
 
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
-            <%= link_to '#page-top', class: "navbar-brand" do %>
-                <span class="d-block d-lg-none">Home</span>
+            <div class="navbar-brand">
+                <span class="d-block d-lg-none"><%= current_user.first_name %> <%= current_user.last_name %></span>
                 <span class="d-none d-lg-block">
                     <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="../assets/avatar.jpg" alt="">
+                    <div class="user-info">
+                      <span><%= current_user.first_name %> <%= current_user.last_name %></span>
+                      <h6 class="email"><%= current_user.email %></h6>
+                    </div>
                 </span>
-            <% end %>
+            </div>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
