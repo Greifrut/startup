@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :posts
   resources :friendships
   root 'static_pages#index'
 
