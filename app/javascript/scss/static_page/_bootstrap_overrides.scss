@@ -13,9 +13,12 @@
 .btn-xl {
   padding: 1rem 2rem;
 }
-
+.btn-lg {
+  margin: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-size: 1rem; 
+}
 .btn-primary {
-  background-color: $primary;
   background-color: $primary;
   &:hover, &:focus, &:active {
     color: $white;
