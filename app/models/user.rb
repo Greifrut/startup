@@ -1,8 +1,7 @@
 class User < ApplicationRecord
     acts_as_authentic
     #Post < User
-  validates :first_name, presence: true
-  validates :last_name, presence: true
+  validates_presence_of :first_name, :last_name
 
   has_many :post
     #Frindship relavation
