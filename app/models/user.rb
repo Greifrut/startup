@@ -1,7 +1,9 @@
 class User < ApplicationRecord
-    acts_as_authentic
+  acts_as_authentic
     #Post < User
   validates_presence_of :first_name, :last_name
+
+  mount_uploader :avatar, AvatarUploader
 
   has_many :post
     #Frindship relavation

@@ -15,6 +15,7 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'authlogic'
 gem 'carrierwave', '~> 1.0'
+gem "mini_magick"
 gem 'webpacker'
 gem 'trix'
 
