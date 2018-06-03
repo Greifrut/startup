@@ -1,0 +1,45 @@
+.post_img {
+  margin: 2em 0 2em 0;
+
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+.blog-post {
+  .post-meta-top {
+    color: #666;
+    font-size: 14px;
+    font-style: italic;
+    margin-bottom: 12px;
+
+    .post-meta-author a {
+      text-decoration: none;
+      color: #666;
+      &:hover {
+        color: $primary;
+      }
+    }
+  }
+
+  .post-title {
+    word-wrap: break-word;
+    color: #252525;
+    font-size: 2em;
+    font-weight: 600;
+    line-height: 1.4;
+    letter-spacing: 0;
+  }
+  
+  .body-container {
+    max-width: 768px;
+    margin: 0;
+
+    .post-body {
+      margin-top: 20px;
+      color: black;
+    }
+  }
+}

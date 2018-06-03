@@ -3,7 +3,7 @@
 
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
             <div class="navbar-brand">
-            <% if action_name == "show" %>
+            <% if action_name == "users#show" %>
                 <%= render 'shared/show_user' %>
             <% else %>
                 <%= render 'shared/unless_show' %>

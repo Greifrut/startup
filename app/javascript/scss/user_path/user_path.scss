@@ -1,9 +1,7 @@
 @import 'nav';
 @import 'section';
 @import 'index';
-body {
-  background: fade-out($gray-200,.5)
-}
+
 .body {
   padding-top: 54px;
   color: $gray-600;

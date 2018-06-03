@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: [:update, :destroy, :show]
+  before_action :set_post, only: [:update, :destroy]
 
   def new
     @post = Post.new
@@ -9,7 +9,10 @@ class PostsController < ApplicationController
     @post = Post.all.order(created_at: :desc)
   end
 
-  def show; end
+  def show
+    @user = User.find(params[:id])
+    @post = @user.post.find(params[:id])
+  end
 
   def create
     @post = current_user.post.new(params_post)
