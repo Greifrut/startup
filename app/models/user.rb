@@ -1,6 +1,8 @@
 class User < ApplicationRecord
   acts_as_authentic
     #Post < User
+  has_many :notifications, foreign_key: :recipient_id
+
   validates_presence_of :first_name, :last_name
 
   mount_uploader :avatar, AvatarUploader
