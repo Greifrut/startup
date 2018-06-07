@@ -1,7 +1,7 @@
 class FriendshipsController < ApplicationController
   before_action :set_friendships, only: [:show, :update, :destroy]
 
-  def index; end
+  def index; end  
 
   def create
     @friendship = current_user.friendships.build(friend_id: params[:friend_id],

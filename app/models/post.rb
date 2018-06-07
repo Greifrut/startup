@@ -3,11 +3,10 @@ class Post < ApplicationRecord
 
   belongs_to :user
   mount_uploader :photo, PostPhotoUploader
-
   private
 
   def all_post
-    @posts = Post.all
+    @posts = Post.all.order('created_at DESC').limit(1)
   end
 
   def notification
