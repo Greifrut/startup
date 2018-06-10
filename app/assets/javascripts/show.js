@@ -13,9 +13,10 @@ $(document).ready(function(){
 });
 
 $(document).ready(function(){
+  var url = document.location.href;
   $('.decline_friend').on('click', function(){
     $.ajax({
-      url: '/friendships/2',
+      url: url,
       method: 'DELETE',
       success: function(){
         console.log("Succes");
