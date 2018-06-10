@@ -1,7 +1,9 @@
 class FriendshipsController < ApplicationController
   before_action :set_friendships, only: [:show, :update, :destroy]
 
-  def index; end  
+  def show
+    @friendships = Friendship.where(friend_id: current_user)
+  end  
 
   def create
     @friendship = current_user.friendships.build(friend_id: params[:friend_id],
@@ -24,7 +26,10 @@ class FriendshipsController < ApplicationController
 
   def destroy
     @friendship.destroy
-    redirect_to current_user
+    respond_to do |format|
+      format.html { edirect_to current_user }
+      format.js
+    end
   end
 
   private

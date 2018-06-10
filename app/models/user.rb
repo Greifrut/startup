@@ -7,7 +7,7 @@ class User < ApplicationRecord
 
   mount_uploader :avatar, AvatarUploader
 
-  has_many :post
+  has_many :post, dependent: :destroy
 
     #Frindship relavation
   has_many :friendships, dependent: :destroy
