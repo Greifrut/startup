@@ -1,24 +1,32 @@
 class FriendshipsController < ApplicationController
-  before_action :set_friendships, only: [:show, :update, :destroy]
+  before_action :set_friendships, only: [:update, :destroy]
 
   def show
-    @friendships = Friendship.where(friend_id: current_user)
+    @user = User.all
+    @friendships = Friendship.where(friend_id: current_user).or(Friendship.where(user_id: current_user, accepted: true))
   end  
 
   def create
     @friendship = current_user.friendships.build(friend_id: params[:friend_id],
                                                  accepted: false)
-    if @friendship.save
-      redirect_to current_user
-    else
-      redirect_to users_path
+    respond_to do |format|
+      if @friendship.save
+        format.html { redirect_to current_user, notice: "Request has been sent" }
+        format.js
+      else
+        format.html { redirect_to users_path }
+      end
     end
   end
 
   def update
     @friendship.update_attributes(accepted: true)
     if @friendship.save
-      redirect_to current_user
+      respond_to do |format|
+        format.html { redirect_to current_user }
+        format.js
+        format.json { render json: current_user}
+      end
     else
       redirect_to users_path
     end
@@ -26,10 +34,7 @@ class FriendshipsController < ApplicationController
 
   def destroy
     @friendship.destroy
-    respond_to do |format|
-      format.html { edirect_to current_user }
-      format.js
-    end
+    redirect_to current_user
   end
 
   private

@@ -1,4 +1,38 @@
-<div class="friends_list">
-  
+<div class="container page-content" data-turbolinks="false">
+    <div class="directory-info-row">
+      <div class="row">
+        <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="panel__friend">
+                <div class="panel-body">
+                    <div class="media">
+                        <div class="pull-left__friend"><!-- Avatar --></div>                       
+                        <div class="media-body">
+                          <h4 class="friends-name"><!-- User name --></h4>
+                          <ul class="social-links">
+                              <li><%= link_to '#', :title => "Facebook" do %>
+                                <i class="fab fa-facebook-f "></i>
+                                <% end %>
+                              </li>
+                              <li><%= link_to '#', :title => "Twitter" do %>
+                                <i class="fab fa-twitter"></i>
+                               <% end %></li>
+                              <li><%= link_to '#', :title => "Instagram" do %>
+                                <i class="fab fa-instagram"></i>
+                                <% end %></li>
+                              <li><%= link_to '#', :title => "Vkontakte" do %>
+                                <i class="fab fa-vk"></i>
+                                <% end %></li>  
+                          </ul>
+                          <address class="friend-address">
+                            <!-- User email -->
+                          </address>
+                          <div class="media--friend_accept"><button>Accept</button></div>
+                          <div class="media--friend_decline"><button>Decline</button></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>  
+     </div>
+    </div>
 </div>
-<div><button class='decline_friend'>Decline</button></div>
