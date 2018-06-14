@@ -3,7 +3,7 @@ class FriendshipsController < ApplicationController
 
   def show
     @user = User.all
-    @friendships = Friendship.where(friend_id: current_user).or(Friendship.where(user_id: current_user, accepted: true))
+    @friendships = Friendship.where(friend_id: current_user).or(Friendship.where(user_id: current_user))
   end  
 
   def create

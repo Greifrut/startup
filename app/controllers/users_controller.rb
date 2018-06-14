@@ -9,6 +9,9 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @users = User.all
+    @friendships = Friendship.where(friend_id: current_user).or(Friendship.where(user_id: current_user))
+
     @posts = current_user.post.all
   end
 

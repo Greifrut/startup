@@ -1,12 +1,12 @@
-$(document).ready(function(){
+$(window).on("turbolinks:load",function(){
   $.ajax({
-    url: '/friendships/1.json',
+    url: '/users/1.json',
     dataType: 'JSON',
     method: 'GET',
-    success: succesFunction
+    success: friendList
   });
 
-  function succesFunction(data) {
+  function friendList(data) {
     if(data.friendships.length > 0){
       var user = $.map(data.users, function(user){
         return user;
@@ -21,7 +21,11 @@ $(document).ready(function(){
 
           if(user[i].id === friends[j].user_id && friends[j].friend_id == idPage){
             console.log("Кто принял заявку");
-
+            var numAdd = 0;
+            if(friends[j].accepted == false){
+              numAdd ++;
+              $("[data-behavior='numAdd']").text(numAdd);
+            }
             var user_name = user[i].first_name + " " + user[i].last_name;
             var email = "<strong>Email:</strong>" + " " + user[i].email;
             var avatar = "<img class='thumb media-object' src='" + user[i].avatar['url'] + "'>";

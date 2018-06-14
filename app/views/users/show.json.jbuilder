@@ -4,7 +4,7 @@ json.friendships do
 end
 
 json.users do
-  json.array! @user do |user|
+  json.array! @users do |user|
     json.id user.id
     json.first_name user.first_name
     json.last_name  user.last_name
