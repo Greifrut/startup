@@ -1,5 +1,8 @@
 class FriendshipsController < ApplicationController
   before_action :set_friendships, only: [:update, :destroy]
+  skip_before_action :verify_authenticity_token
+
+
 
   def show
     @user = User.all

@@ -14,9 +14,9 @@ class Notifications
     handleSuccess: (data) =>
       console.log(data)
       items = $.map data, (notification) ->
-        "<a href='#{notification.path}'>#{notification.actor}</a>"
+        "<a href='#{notification.path}'>#{notification.actor} #{notification.action} #{notification.notifiable.type}</a></br>"
       $("[data-behavior='notification-items']").html(items)
 
-jQuery ->
+$(window).on "turbolinks:load", ->
   new Notifications
 

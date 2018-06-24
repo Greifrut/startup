@@ -36,7 +36,7 @@ $(window).on("turbolinks:load",function(){
 
             $('.media--friend_decline').children().on('click', function(){
               $.ajax({
-                url: "/friendships/" + friends[j].user_id,
+                url: "/friendships/" + idPage,
                 method: 'DELETE',
                 success: function(){
                   console.log("Succes");
@@ -46,7 +46,7 @@ $(window).on("turbolinks:load",function(){
 
             $('.media--friend_accept').children().on('click', function(){
               $.ajax({
-                url: "/friendships/" + friends[j].user_id,
+                url: "/friendships/" + idPage,
                 method: 'PUT',
                 success: function(){
                   console.log("Succes");
