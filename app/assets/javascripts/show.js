@@ -18,6 +18,7 @@ $(window).on("turbolinks:load",function(){
         for(var j in friends) {
           var hrefPage = window.location.href;
           var idPage = hrefPage.replace('http://localhost:3000/friendships/', ' ');
+          $('.media--friend_decline').html('<button>Decline</button>');
 
           if(user[i].id === friends[j].user_id && friends[j].friend_id == idPage){
             console.log("Кто принял заявку");
@@ -25,6 +26,8 @@ $(window).on("turbolinks:load",function(){
             if(friends[j].accepted == false){
               numAdd ++;
               $("[data-behavior='numAdd']").text(numAdd);
+            }else{
+              $(".media--friend_accept").remove();
             }
             var user_name = user[i].first_name + " " + user[i].last_name;
             var email = "<strong>Email:</strong>" + " " + user[i].email;
@@ -33,6 +36,8 @@ $(window).on("turbolinks:load",function(){
             $('h4.friends-name').html(user_name);
             $('address.friend-address').html(email);
             $('.pull-left__friend').html(avatar);
+            $('.media--friend_accept').html('<button>Accept</button>');
+            $('.media--friend_decline').html('<button>Decline</button>');
 
             $('.media--friend_decline').children().on('click', function(){
               $.ajax({
